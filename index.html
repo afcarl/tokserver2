@@ -1,0 +1,83 @@
+<html>
+  <style type="text/css">
+    @import url(http://fonts.googleapis.com/css?family=Lato:300,400|Droid+Sans+Mono);
+body {
+    background: #f3f3f3;
+    font: normal 120% Lato, sans-serif;
+    margin: 0;
+    color: #555;
+}
+/*body > * {
+    width: 760px;
+    padding: 20px;
+    margin: 20px auto;
+    background: white;
+}*/
+
+.blank_row
+{
+    height: 10px !important; /* Overwrite any previous rules */
+    background-color: #FFFFFF;
+}
+
+  #container {
+    display: table;
+    }
+
+  #row  {
+    display: table-row;
+    }
+
+  #left {
+  padding-right: 10px;
+  text-align:right;
+    display: table-cell;
+  }
+  #left, #right {
+/*    padding: 10px;*/
+    display: table-cell;
+  }
+  #plain, #markup {
+  display: inline;
+  }
+  
+  #markup {
+  color: yellow;
+  background-color: red;
+  }
+ #numbut {
+  display:block;
+}
+#button {
+    color: red;
+    width: 20em; height: 2em;
+}
+
+  </style>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>WikTok</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" ></script>
+  <script src="tweetserver.js" async></script>
+
+  </head>
+  <body bgcolor="#FFFFEE">
+<h1> Universal Tokenizer Comparison Tool </h1>
+    How many sentences should I tokenize?<input id="numbut" type="number" name="quantity" min="1" max="20" value="5">
+    <br> Now,<br>
+    <button id="button" onclick="randwiktok()">Choose random languages</button>
+    <br>or
+    select a language by its <a href="http://www-01.sil.org/iso639-3/codes.asp">ISO 639-3 code</a> (e.g. eng, tam, hau, tur) <input type="text" name="lang" id="lang" maxlength="3" value="eng">
+    <button id="button" onclick="choosewiktok()">Choose specific language</button>    
+    <br>or
+    enter some text here: 
+    <br> <textarea rows="4" cols="50" name="usertextbox" id="usertextbox">
+This is a test.
+It is only a test.
+</textarea>
+    <button id="button" onclick="usertok()">Tokenize the content of the text box</button>    
+    <div class="blank_row"></div>
+    <div id="anchor"></div>
+  </body>
+</html>
